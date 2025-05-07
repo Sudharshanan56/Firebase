@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_authentication/home.dart';
+import 'package:firebase_authentication/signin.dart';
 import 'package:flutter/material.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -194,17 +195,20 @@ if (password != null &&
             
                 const Spacer(),
             
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Text("Already have an account? "),
-                    TextButton(
-                      onPressed: () {
-                        // Navigate to login
-                      },
-                      child: const Text("Login"),
-                    ),
-                  ],
+                InkWell(
+                  onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen())),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text("Already have an account? "),
+                      TextButton(
+                        onPressed: () {
+                          // Navigate to login
+                        },
+                        child: const Text("Login"),
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
